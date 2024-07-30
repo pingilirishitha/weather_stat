@@ -4,12 +4,12 @@ from django.conf import settings
 from weather.models import WeatherRecord
 
 
-files_directory = os.path.join(settings.BASE_DIR, './wx_data/')  # Replace with your actual path
+files_directory = os.path.join(settings.BASE_DIR, './wx_data/')  
 files = os.listdir(files_directory)
 start_time = datetime.now()
 total_records = 0    
 for file_name in files:
-    with open(os.path.join(files_directory, file_name), 'r') as file:  # Replace with your file path
+    with open(os.path.join(files_directory, file_name), 'r') as file:  
         for line in file:
             total_records += 1
             parts = line.strip().split('	  ')
